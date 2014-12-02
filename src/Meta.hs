@@ -8,21 +8,21 @@ import Utils hiding (main)
 
 data MPoint = 
 		MPnt Double Double  			-- обычная точка (угол)
-	| 	MRond Double Double Double   	-- скругленный угол
+	| 	MRound Double Double Double   	-- скругленный угол
 	|	MCircle Double Double Double	-- окружность с радиусом
 	deriving (Show, Eq)
 
 --преобразует траекторию в g-код
-meta2GCode :: [MPoint] -> Direction -> Double -> CNC
-meta2GCode l dir safeZ = undefined
+--meta2Trajectory :: [MPoint] -> Direction -> Double -> CNC
+--meta2GCode l dir safeZ = undefined
 
-tests = [
-	assertCNC "test_01"
-			  (meta2GCode [MPnt 0 0, MPnt 10 0, MPnt 10 10, MPnt 0 10] CW 5)
-			  "dd"
-	]
+tests = []
+--	assertCNC "Meta.test_01"
+--			  (meta2GCode [MPnt 0 0, MPnt 10 0, MPnt 10 10, MPnt 0 10] CW 5)
+--			  "dd"
+--	]
 
 
 
-main = 
-	testing Meta.tests
+--main = do
+--	testing Meta.tests

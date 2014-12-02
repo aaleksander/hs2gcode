@@ -31,8 +31,6 @@ export f =
 	mapM_ (putStrLn.show) y
 	where (_, y) = runWriter f
 
-
-
 testUP a b c = areEqual c (export' a) b
 
 tests = [
