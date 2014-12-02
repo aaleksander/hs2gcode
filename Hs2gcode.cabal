@@ -16,6 +16,6 @@ cabal-version:       >=1.8
 
 library
   exposed-modules:     Cnc
-  other-modules:       GCode, Export, Utils
+  other-modules:       GCode, Export, Utils, Meta, Geometry, Trajectory
   build-depends:       base == 4.*, HUnit ==1.2.*, mtl
   hs-source-dirs:      src
