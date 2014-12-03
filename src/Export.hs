@@ -31,7 +31,10 @@ export f =
 	mapM_ (putStrLn.show) y
 	where (_, y) = runWriter f
 
-testUP a b c = areEqual c (export' a) b
+--извлекаем из монады спико Command
+extract f = a where (_, a) = runWriter f
+
+--testUP a b c = areEqual c (export' a) b
 
 tests = [
 	assertCNC "test_01" 
@@ -41,5 +44,10 @@ tests = [
 			 "G0 X0.0\nG0 Y0.0\n"
 	]
 
+f1 = do
+	g0 [X 1, Y 2]
+	g0 [Y 3, Z 4]
+
 main = do
+	--putStrLn $ show $ extract f1
 	testing Export.tests
